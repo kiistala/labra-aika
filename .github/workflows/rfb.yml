@@ -20,7 +20,7 @@ jobs:
           images: ppodgorsek/robot-framework
 
   robot_test:
-    name: Robot Framework
+    name: Robot Framework Browser Run
     runs-on: ubuntu-latest
 
     steps:
@@ -33,6 +33,11 @@ jobs:
           tests_dir: '${{ github.workspace }}/robot_tests'
           reports_dir: '${{ github.workspace }}/output'
 
+  save_screenshot:
+    name: Save the screenshot
+    runs-on: ubuntu-latest
+
+    steps:
       # upload the artifact:
       - uses: int128/upload-artifact-wiki-action@v1
         id: upload-artifact-wiki-action
