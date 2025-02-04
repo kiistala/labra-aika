@@ -41,6 +41,8 @@ jobs:
           mkdir -pv img
           cp -v ${{ github.workspace }}/output/*.png img/
 
+      - name: tree view 1
+        run: tree ${{ github.workspace }}
 
   save_screenshot:
     name: Save the screenshot
@@ -60,3 +62,6 @@ jobs:
           post: |
             ## Screenshot
             <img width="1920" src="${{ steps.upload-artifact-wiki.outputs.url }}/Huslab_Nurmijarvi.png">
+
+      - name: tree view 2
+        run: tree ${{ github.workspace }}
