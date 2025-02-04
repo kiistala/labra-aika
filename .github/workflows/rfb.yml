@@ -33,8 +33,9 @@ jobs:
           tests_dir: '${{ github.workspace }}/robot_tests'
           reports_dir: '${{ github.workspace }}/output'
 
-      - name: Archive production artifacts
+      - name: artifact 1
         uses: actions/upload-artifact@v4
         with:
-          name: archive-screenshots
-          path: output/*.png
+          name: nj-screenshot
+          path: output/Huslab_Nurmijarvi.png
+          
