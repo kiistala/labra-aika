@@ -9,9 +9,10 @@ on:
   workflow_dispatch:
 
 jobs:
-  cache_container_image:
-    name: Cache Container Images Action
+  robot_test:
+    name: Robot Framework Browser Run
     runs-on: ubuntu-latest
+
     steps:
       - name: Cache Container Images
         uses: jamesmortensen/cache-container-images-action@v1.0.1
@@ -19,11 +20,6 @@ jobs:
           # Container images to pull and cache
           images: ppodgorsek/robot-framework
 
-  robot_test:
-    name: Robot Framework Browser Run
-    runs-on: ubuntu-latest
-
-    steps:
       - uses: actions/checkout@v4
 
       - name: Nj vapaat
