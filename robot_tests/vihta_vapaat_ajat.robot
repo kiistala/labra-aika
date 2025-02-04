@@ -39,11 +39,11 @@ Vihta, Vapaat ajat
     Click  //button[@data-ng-click="searchDesktop()"]    
 
     # Click with  ${elem} 
-    # Sleep  4 
+    Sleep  5
     #Take Screenshot  more
 
     # Click  //a[contains(text(), "Lisää")]
-    Set Strict Mode  False
+    # Set Strict Mode  False
     # Click With Options  div.freeTimeMore > a.btn  force=True
     Take Screenshot  ${OUTPUT_DIR}${/}Huslab_Nurmijarvi
     # Log  ${OUTPUT_DIR}
