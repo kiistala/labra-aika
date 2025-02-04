@@ -16,8 +16,6 @@ jobs:
       - name: Cache Container Images
         uses: jamesmortensen/cache-container-images-action@v1.0.1
         with:
-          # Container runtime engine
-          runtime: # optional, default is podman
           # Container images to pull and cache
           images: ppodgorsek/robot-framework
 
