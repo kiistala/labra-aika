@@ -16,5 +16,5 @@ jobs:
       - name: Nj vapaat
         uses: GoleeTeam/robotframework-browser-action@v1.0-golee1
         with:
-          tests_dir: robot_tests
-          reports_dir: output
+          tests_dir: '${{ github.workspace }}/robot_tests'
+          reports_dir: '${{ github.workspace }}/robot_tests/reports'
