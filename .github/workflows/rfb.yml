@@ -1,0 +1,27 @@
+name: Robot Framework Browser Action
+  uses: GoleeTeam/robotframework-browser-action@v1.0-golee1
+  with:
+    # custom imagename for execute robot framework
+    image: # default is ppodgorsek/robot-framework
+    # custom tag verion image for execute robot framework
+    image_version: # default is latest
+    # Directory where Robot tests are located in the repository
+    tests_dir: # default is robot_tests
+    # Where will the report from test be saved
+    reports_dir: # default is reports
+    # Shared memory that Docker container is allowed to use
+    allowed_shared_memory: # default is 1g
+    # Browser to use
+    browser: # default is chrome
+    # Execute tests in parallel
+    robot_threads: # default is 1
+    # Extra settings for parallel execution. https://github.com/mkorpela/pabot#command-line-options
+    pabot_options: # default is 
+    # Extra options for robot command
+    robot_options: # default is 
+    # Color depth of the virtual screen
+    screen_color_depth: # default is 24
+    # Height of the virtual screen
+    screen_height: # default is 1080
+    # Width of the virtual screen
+    screen_width: # default is 1920
