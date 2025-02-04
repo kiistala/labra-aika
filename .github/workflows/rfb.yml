@@ -1,50 +1,10 @@
-name: nj2
-
 jobs:
-  # This workflow contains a single job called "build"
-  build:
-    # The type of runner that the job will run on
+  robot_test:
     runs-on: ubuntu-latest
-
-        uses: GoleeTeam/robotframework-browser-action@v1.0-golee1
-        with:
-          # custom imagename for execute robot framework
-          image: # default is ppodgorsek/robot-framework
-          # custom tag verion image for execute robot framework
-          image_version: # default is latest
-          # Directory where Robot tests are located in the repository
-          tests_dir: # default is robot_tests
-          # Where will the report from test be saved
-          reports_dir: # default is reports
-          # Shared memory that Docker container is allowed to use
-          allowed_shared_memory: # default is 1g
-          # Browser to use
-          browser: # default is chrome
-          # Execute tests in parallel
-          robot_threads: # default is 1
-          # Extra settings for parallel execution. https://github.com/mkorpela/pabot#command-line-options
-          pabot_options: # default is 
-          # Extra options for robot command
-          robot_options: # default is 
-          # Color depth of the virtual screen
-          screen_color_depth: # default is 24
-          # Height of the virtual screen
-          screen_height: # default is 1080
-          # Width of the virtual screen
-          screen_width: # default is 1920
-
-    # Steps represent a sequence of tasks that will be executed as part of the job
-    steps:
-      # Checks-out your repository under $GITHUB_WORKSPACE, so your job can access it
-      - uses: actions/checkout@v4
-
-      # Runs a single command using the runners shell
-      - name: Run a one-line script
-        run: echo Hello, world!
-
-      # Runs a set of commands using the runners shell
-      - name: Run a multi-line script
-        run: |
-          echo Add other actions to build,
-          echo test, and deploy your project.
-
+    - name: Robot Framework
+      uses: tarathep/robotframework-github-action@v1.0
+      with:
+        image: kietara/robot-framework
+        image_version: 1.0
+        tests_dir: '${{ github.workspace }}/robot_tests'
+        reports_dir: '${{ github.workspace }}/output'
