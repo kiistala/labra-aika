@@ -11,13 +11,16 @@ on:
 jobs:
   cache_container_image:
     name: Cache Container Images Action
-    uses: jamesmortensen/cache-container-images-action@v1.0.1
-    with:
-      # Container runtime engine
-      runtime: # optional, default is podman
-      # Container images to pull and cache
-      images: ppodgorsek/robot-framework
-          
+    runs-on: ubuntu-latest
+    steps:
+      - name: Cache Container Images
+        uses: jamesmortensen/cache-container-images-action@v1.0.1
+        with:
+          # Container runtime engine
+          runtime: # optional, default is podman
+          # Container images to pull and cache
+          images: ppodgorsek/robot-framework
+
   robot_test:
     name: Robot Framework
     runs-on: ubuntu-latest
