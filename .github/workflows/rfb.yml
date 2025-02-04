@@ -10,9 +10,7 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: Nj vapaat
-        uses: tarathep/robotframework-github-action@v1.0
+        uses: GoleeTeam/robotframework-browser-action@v1.0-golee1
         with:
-          image: kietara/robot-framework
-          image_version: 1.0
           tests_dir: '${{ github.workspace }}/robot_tests'
           reports_dir: '${{ github.workspace }}/output'
