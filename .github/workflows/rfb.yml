@@ -33,6 +33,15 @@ jobs:
           tests_dir: '${{ github.workspace }}/robot_tests'
           reports_dir: '${{ github.workspace }}/output'
 
+      - name: list our images
+        run: ls -la ${{ github.workspace }}/output
+        
+      - name: copy our images
+        run: |
+          mkdir -pv img
+          cp -v ${{ github.workspace }}/output/*.png img/
+
+
   save_screenshot:
     name: Save the screenshot
     runs-on: ubuntu-latest
@@ -42,7 +51,7 @@ jobs:
       - uses: int128/upload-artifact-wiki-action@v1
         id: upload-artifact-wiki-action
         with:
-          path: output/Huslab_Nurmijarvi.png
+          path: img/Huslab_Nurmijarvi.png
 
       # post a comment with it
       - uses: int128/comment-action@v1
